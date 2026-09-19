@@ -11,3 +11,19 @@ A lightweight, zero-dependency React hook for synchronizing state across browser
 
 ```bash
 npm install react-state-sync
+
+
+
+import React from 'react';
+import { useSharedState } from 'react-state-sync';
+
+function Counter() {
+  const [count, setCount] = useSharedState('app_counter', 0);
+
+  return (
+    <div>
+      <p>Shared Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment Across Tabs</button>
+    </div>
+  );
+}
